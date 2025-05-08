@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Opening Stock</title>
+    <style>
+        body {
+            background-color: #b3d9ff; /* Light blue background */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        h2 {
+            color: #333;
+        }
+        input[type="file"] {
+            margin: 25px 0;
+        }
+        input[type="submit"] {
+            padding: 10px 25px;
+            background-color: #007BFF; /* Blue color for submit button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        .notes {
+            margin-top: 20px;
+            color: red; /* Red color for notes */
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Select Excel file to Upload Opening Stock from your Computer/ Device</h2>
+    <form>
+        <input type="file" id="fileUpload" name="fileUpload" accept=".xls,.xlsx" required>
+        <br>
+        <input type="submit" value="Submit">
+        <br><br>
+        <a href="sample_excel_file.xlsx" download>Download Sample Excel File</a>
+    </form>
+
+    <div class="notes">
+        <p>*Note:</p>
+        <ol>
+            <li>No Comma, No formula allowed in the excel file, kindly use value paste.</li>
+            <li>For date value, kindly use '/' or '-' instead of '.'</li>
+            <li>Colored column is allowed to be left blank. All other columns are compulsory to feed.</li>
+            <li>First row of Sample Excel file is for column headings. It should not be changed/ modified in any condition.</li>
+        </ol>
+    </div>
+
+</body>
+</html>

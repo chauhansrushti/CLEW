@@ -1,0 +1,106 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 165px; 
+    height: 100%; 
+    background-color: #1abc9c; 
+    color: white; 
+    padding: 20px; 
+    box-shadow: 0px 0 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+}
+
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+  border-radius: 15px;
+  border: 1px solid rgb(90, 230, 252);
+  padding-top: 10px;
+  padding-right: -0px;
+  padding-bottom: 2px;
+  padding-left: -1px;
+  font-size: larger;
+}
+li a{
+  color: white;
+  display: block;
+  text-decoration: none;
+}
+
+li a.active {
+  color: rgb(34, 39, 39);
+}
+
+li a:hover:not(.active) {
+  color: rgb(55, 49, 49);
+}
+.l-clogo {
+  height: auto; 
+  position:relative;
+  width: 35px;
+  margin-left: -11%;
+  margin-bottom: -0%;
+  margin-top: -10%;
+  
+}
+.sidebar a,.dropdown-btn {
+  padding: 6px 8px 4px 9px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #eeffff;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+.sidebar a:hover,.dropdown-btn:hover {
+  color: #f1f1f1;
+}
+.active {
+  background-color: rgb(70, 82, 80);
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color:#0fa889;
+  padding-left: 8px;
+}
+  .dropdown-container a:hover {
+    text-decoration: underline;
+  }
+
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 1px;
+  color:white;
+}
+iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+}
+.content {
+  flex: 1;
+  padding: 20px;
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Order Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: white;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .table-container {
+      overflow-x: auto;
+      background-color: #f8f8ff;
+      padding: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1000px;
+      background: #f8f8ff;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ccc;
+      white-space: nowrap;
+    }
+    th {
+      background-color: #159d82;;
+      color: white;
+    }
+    .action-links a {
+      margin-right: 8px;
+      color: #224;
+      text-decoration: none;
+    }
+    .action-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Open Order Details</h1>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Customer id</th>
+          <th>ST</th>
+          <th>Location</th>
+          <th>Invoice</th>
+          <th>Txn Date</th>
+          <th>Product Description</th>
+          <th>UOM</th>
+          <th>QTY</th>
+          <th>CAN</th>
+          <th>Dispatched On</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ABC Corp</td>
+          <td>12345</td>
+          <td>ST01</td>
+          <td>Delhi</td>
+          <td>INV001</td>
+          <td>2025-04-15</td>
+          <td>Product A</td>
+          <td>Box</td>
+          <td>100</td>
+          <td>10</td>
+          <td>2025-04-17</td>
+          <td class="action-links"><a href="#">Edit</a><a href="#">Delete</a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="action-links"><a href="#">Edit</a><a href="#">Delete</a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="action-links"><a href="#">Edit</a><a href="#">Delete</a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="action-links"><a href="#">Edit</a><a href="#">Delete</a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="action-links"><a href="#">Edit</a><a href="#">Delete</a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="action-links"><a href="#">Edit</a><a href="#">Delete</a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="action-links"><a href="#">Edit</a><a href="#">Delete</a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="action-links"><a href="#">Edit</a><a href="#">Delete</a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="action-links"><a href="#">Edit</a><a href="#">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    // Handle Delete
+    document.querySelectorAll('.action-links a:nth-child(2)').forEach(deleteLink => {
+      deleteLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        const row = this.closest('tr');
+        if (confirm("Are you sure you want to delete this row?")) {
+          row.remove();
+        }
+      });
+    });
+  
+    // Handle Edit
+    document.querySelectorAll('.action-links a:nth-child(1)').forEach(editLink => {
+      editLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        const row = this.closest('tr');
+        const cells = row.querySelectorAll('td:not(.action-links)');
+        if (this.textContent === "Edit") {
+          cells.forEach(cell => {
+            const value = cell.textContent;
+            cell.innerHTML = `<input type="text" value="${value}" style="width:100%">`;
+          });
+          this.textContent = "Save";
+        } else {
+          cells.forEach(cell => {
+            const input = cell.querySelector('input');
+            if (input) cell.textContent = input.value;
+          });
+          this.textContent = "Edit";
+        }
+      });
+    });
+  </script>
+  
+</body>
+</html>

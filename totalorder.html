@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orders Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: white;
+      margin: 0;
+      padding: 20px;
+      display:contents;
+     
+    }
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .summary {
+      display: flex;
+      justify-content: space-between;
+    }
+    .summary-box {
+      flex: 1;
+      margin: 10px;
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+      text-align: center;
+    }
+    .nv {
+      background: #FFA95C;
+    }
+    .fl {
+      background: #488EF2;
+    }
+    canvas {
+      width: 100% !important;
+      height: auto !important;
+    }
+    #barChart {
+      max-height: 200px;
+    }
+    #pieChartTotal,
+    #pieProductsCombined,
+    #pieGAMain,
+    #pieNVMain,
+    #pieFLMain {
+      max-height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="summary">
+    <div class="summary-box nv">
+      <h2>Orders Received - (NV-MAIN)</h2>
+      <p style="font-size: 28px; font-weight: bold;">11,015 CANs</p>
+      <p>02/Apr/2025 - 21/Apr/2025</p>
+    </div>
+    <div class="summary-box fl">
+      <h2>Orders Received - (FL-MAIN)</h2>
+      <p style="font-size: 28px; font-weight: bold;">15,750 CANs</p>
+      <p>02/Apr/2025 - 21/Apr/2025</p>
+    </div>
+  </div>
+  <div class="dashboard">
+    <div class="card"><canvas id="barChart"></canvas></div>
+    <div class="card"><canvas id="pieChartTotal"></canvas></div>
+    <div class="card"><canvas id="pieProductsCombined"></canvas></div>
+    <div class="card"><canvas id="pieGAMain"></canvas></div>
+    <div class="card"><canvas id="pieNVMain"></canvas></div>
+    <div class="card"><canvas id="pieFLMain"></canvas></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const barChart = new Chart(document.getElementById('barChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Total', 'GA-MAIN', 'NV-MAIN', 'FL-MAIN'],
+        datasets: [{
+          label: 'Orders Qty',
+          data: [280000, 230000, 20000, 30000],
+          backgroundColor: ['#a33', '#2e7d32', '#3949ab', '#f9a825']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } }
+      }
+    });
+
+    const pieChartTotal = new Chart(document.getElementById('pieChartTotal'), {
+      type: 'pie',
+      data: {
+        labels: ['GA-MAIN', 'NV-MAIN', 'FL-MAIN'],
+        datasets: [{
+          data: [230000, 20000, 30000],
+          backgroundColor: ['#2e7d32', '#3949ab', '#f9a825']
+        }]
+      }
+    });
+
+    const productLabels = ['Blueberry', 'Citrus', 'Cool Mint', 'Original', 'Spearmint', 'Wintergreen'];
+    const productColors = ['#b71c1c', '#2e7d32', '#3949ab', '#fbc02d', '#d32f2f', '#0288d1'];
+
+    const pieProductsCombined = new Chart(document.getElementById('pieProductsCombined'), {
+      type: 'pie',
+      data: {
+        labels: productLabels,
+        datasets: [{
+          data: [10, 15, 10, 25, 20, 20],
+          backgroundColor: productColors
+        }]
+      }
+    });
+
+    const pieGAMain = new Chart(document.getElementById('pieGAMain'), {
+      type: 'pie',
+      data: {
+        labels: productLabels,
+        datasets: [{
+          data: [12, 14, 10, 26, 18, 20],
+          backgroundColor: productColors
+        }]
+      }
+    });
+
+    const pieNVMain = new Chart(document.getElementById('pieNVMain'), {
+      type: 'pie',
+      data: {
+        labels: productLabels,
+        datasets: [{
+          data: [11, 18, 10, 22, 19, 20],
+          backgroundColor: productColors
+        }]
+      }
+    });
+
+    const pieFLMain = new Chart(document.getElementById('pieFLMain'), {
+      type: 'pie',
+      data: {
+        labels: productLabels,
+        datasets: [{
+          data: [13, 16, 11, 20, 20, 20],
+          backgroundColor: productColors
+        }]
+      }
+    });
+  </script>
+</body>
+</html>

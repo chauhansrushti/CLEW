@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Order Complete</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 100%;
+            margin: 20px auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #aaa;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #159d82;
+        }
+        .remove-btn {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Mark Order Complete</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Customer id</th>
+                <th>ST</th>
+                <th>Location</th>
+                <th>Invoice</th>
+                <th>Txn Date</th>
+                <th>Product Description</th>
+                <th>UOM</th>
+                <th>QTY</th>
+                <th>CAN</th>
+                <th>Dispatched On</th>
+                <th>Completed On</th>
+            </tr>
+        </thead>
+        <tbody id="orderTableBody">
+            <tr id="order-1">
+                <td>Customer Name</td>
+                <td>123456</td>
+                <td>ST1</td>
+                <td>Location A</td>
+                <td>Invoice 001</td>
+                <td>01-01-2023</td>
+                <td>Product A</td>
+                <td>Pcs</td>
+                <td>10</td>
+                <td><button class="remove-btn" onclick="removeOrder(1)">Remove</button></td>
+                <td><input type="date"></td>
+                <td><button class="submit-btn" onclick="submitOrder(1)">Submit</button></td>
+            </tr>
+            <tr id="order-1">
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><button class="remove-btn" onclick="removeOrder(1)">Remove</button></td>
+              <td><input type="date"></td>
+              <td><button class="submit-btn" onclick="submitOrder(1)">Submit</button></td>
+          </tr>
+          <tr id="order-1">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><button class="remove-btn" onclick="removeOrder(1)">Remove</button></td>
+            <td><input type="date"></td>
+            <td><button class="submit-btn" onclick="submitOrder(1)">Submit</button></td>
+        </tr>
+        <tr id="order-1">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><button class="remove-btn" onclick="removeOrder(1)">Remove</button></td>
+          <td><input type="date"></td>
+          <td><button class="submit-btn" onclick="submitOrder(1)">Submit</button></td>
+      </tr>
+      <tr id="order-1">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><button class="remove-btn" onclick="removeOrder(1)">Remove</button></td>
+        <td><input type="date"></td>
+        <td><button class="submit-btn" onclick="submitOrder(1)">Submit</button></td>
+    </tr>
+    <tr id="order-1">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><button class="remove-btn" onclick="removeOrder(1)">Remove</button></td>
+      <td><input type="date"></td>
+      <td><button class="submit-btn" onclick="submitOrder(1)">Submit</button></td>
+  </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // Function to submit an order
+    function submitOrder(orderId) {
+        const row = document.getElementById(`order-${orderId}`);
+        if (row) {
+            // Gather order data
+            const orderData = {
+                customerId: row.cells[1].textContent,
+                quantity: row.cells[8].textContent,
+                // Add other necessary fields as needed
+            };
+            console.log('Submitting Order:', orderData);
+            // You can replace the console.log with actual submission code
+        }
+    }
+
+    // Function to remove an order
+    function removeOrder(orderId) {
+        const row = document.getElementById(`order-${orderId}`);
+        if (row) {
+            row.parentNode.removeChild(row);
+            console.log(`Order ${orderId} removed.`);
+        }
+    }
+</script>
+</body>
+</html>

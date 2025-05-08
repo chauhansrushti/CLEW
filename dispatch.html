@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Order Dispatch</title>
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #159d82;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+td input[type="text"], td input[type="date"] {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    background-color: #159d82;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #2980B9;
+}
+</style>
+<body>
+    <div class="container">
+        <h1>Mark Order Dispatch</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer</th>
+                    <th>Customer ID</th>
+                    <th>ST</th>
+                    <th>Location</th>
+                    <th>Invoice</th>
+                    <th>Txn Date</th>
+                    <th>Product Description</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="orderTableBody">
+                <tr>
+                    <td><input type="text" placeholder="Customer Name"></td>
+                    <td><input type="text" placeholder="Customer ID"></td>
+                    <td><input type="text" placeholder="ST"></td>
+                    <td><input type="text" placeholder="Location"></td>
+                    <td><input type="text" placeholder="Invoice"></td>
+                    <td><input type="date"></td>
+                    <td><input type="text" placeholder="Product Description"></td>
+                    <td><input type="date"></td>
+                    <td><button class="submit-btn">Submit</button></td>
+                </tr>
+                <tr>
+                  <td><input type="text" placeholder="Customer Name"></td>
+                  <td><input type="text" placeholder="Customer ID"></td>
+                  <td><input type="text" placeholder="ST"></td>
+                  <td><input type="text" placeholder="Location"></td>
+                  <td><input type="text" placeholder="Invoice"></td>
+                  <td><input type="date"></td>
+                  <td><input type="text" placeholder="Product Description"></td>
+                  <td><input type="date"></td>
+                  <td><button class="submit-btn">Submit</button></td>
+              </tr>
+              <tr>
+                <td><input type="text" placeholder="Customer Name"></td>
+                <td><input type="text" placeholder="Customer ID"></td>
+                <td><input type="text" placeholder="ST"></td>
+                <td><input type="text" placeholder="Location"></td>
+                <td><input type="text" placeholder="Invoice"></td>
+                <td><input type="date"></td>
+                <td><input type="text" placeholder="Product Description"></td>
+                <td><input type="date"></td>
+                <td><button class="submit-btn">Submit</button></td>
+            </tr>
+            <tr>
+              <td><input type="text" placeholder="Customer Name"></td>
+              <td><input type="text" placeholder="Customer ID"></td>
+              <td><input type="text" placeholder="ST"></td>
+              <td><input type="text" placeholder="Location"></td>
+              <td><input type="text" placeholder="Invoice"></td>
+              <td><input type="date"></td>
+              <td><input type="text" placeholder="Product Description"></td>
+              <td><input type="date"></td>
+              <td><button class="submit-btn">Submit</button></td>
+          </tr>
+          <tr>
+            <td><input type="text" placeholder="Customer Name"></td>
+            <td><input type="text" placeholder="Customer ID"></td>
+            <td><input type="text" placeholder="ST"></td>
+            <td><input type="text" placeholder="Location"></td>
+            <td><input type="text" placeholder="Invoice"></td>
+            <td><input type="date"></td>
+            <td><input type="text" placeholder="Product Description"></td>
+            <td><input type="date"></td>
+            <td><button class="submit-btn">Submit</button></td>
+        </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+      // Here you can add functionality for the submit button if needed
+document.querySelectorAll('.submit-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        alert('Order Submitted');
+        // Additional submission logic can be added here
+    });
+});
+
+    </script>
+</body>
+</html>

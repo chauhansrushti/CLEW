@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Product with Products</title>
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    margin: 10px 0;
+    display: block;
+}
+
+select {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #159d82;
+    color: white;
+}
+
+.total {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+</style>
+<body>
+    <div class="container">
+        <h1>Invoice Wise Order Products</h1>
+        <label for="product-select">Select Invoice:</label>
+        <select id="product-select">
+            <option value="">--Select invoice--</option>
+        </select>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer id</th>
+                    <th>Customer Name</th>
+                    <th>Date</th>
+                    <th>Invoice Number</th>
+                    <th>Product Name</th>
+                    <th>Unit</th>
+                    <th>Qty</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </td>
+                    <td><button>Add</button></td>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <td colspan="7">Total</td>
+                        <td>0</td>
+                    </tr>
+                </tfoot>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

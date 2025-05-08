@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Total Purchases Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: white;
+      margin: 0;
+      padding: 20px;
+    }
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .card {
+      border-radius: 10px;
+      padding: 20px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      position: relative;
+      height: 150px;
+    }
+    .icon {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      font-size: 30px;
+      color: rgb(255, 255, 255);
+    }
+    .et { background: linear-gradient(135deg, #7f00ff, #6a00ff); }
+    .ga { background: linear-gradient(135deg, #ff6a6a, #ff4d4d); }
+    .nv { background: linear-gradient(135deg, #ffb347, #ffcc33); }
+    .fl { background: linear-gradient(135deg, #1e90ff, #00bfff); }
+    h2 { margin: 0 0 10px; font-size: 18px; }
+    p { margin: 5px 0; }
+    .bold { font-size: 24px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <div class="card et">
+      <h2>Total Purchases by ET</h2>
+      <p class="bold">547</p>
+      <p>13/Mar/2025 - 21/Apr/2025</p>
+      <div class="icon">🛒</div>
+    </div>
+    <div class="card ga">
+      <h2>Total Purchases - (GA-MAIN)</h2>
+      <p class="bold">547</p>
+      <p>13/Mar/2025 - 21/Apr/2025</p>
+      <div class="icon">🛒</div>
+    </div>
+    <div class="card nv">
+      <h2>Total Purchases - (NV-MAIN)</h2>
+      <p class="bold">0 CAN(s)</p>
+      <p>13/Mar/2025 - 21/Apr/2025</p>
+      <div class="icon">🛒</div>
+    </div>
+    <div class="card fl">
+      <h2>Total Purchases - (FL-MAIN)</h2>
+      <p class="bold">0 CAN(s)</p>
+      <p>13/Mar/2025 - 21/Apr/2025</p>
+      <div class="icon">🛒</div>
+    </div>
+  </div>
+</body>
+</html>

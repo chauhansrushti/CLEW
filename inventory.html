@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Inventory/Stock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        h2 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #159d82;;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #159d82;;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Transfer</h2>
+    <p>Inventory/ Stock</p>
+    <div class="form-group">
+        <label for="txn-date">TxnDate</label>
+        <input type="date" id="txn-date" name="txn-date" required>
+    </div>
+    <div class="form-group">
+        <label for="product-name">ProductName</label>
+        <input type="text" id="product-name" name="product-name" required>
+    </div>
+    <div class="form-group">
+        <label for="from">From</label>
+        <select id="from" name="from">
+            <option value="">Select</option>
+            <option value="location1">Location 1</option>
+            <option value="location2">Location 2</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="to">To</label>
+        <select id="to" name="to">
+            <option value="">Select</option>
+            <option value="location1">Location 1</option>
+            <option value="location2">Location 2</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="qty">Qty</label>
+        <input type="number" id="qty" name="qty" required>
+    </div>
+    <div class="form-group">
+        <label for="uom">UOM</label>
+        <select id="uom" name="uom">
+            <option value="">Select</option>
+            <option value="pcs">Pieces</option>
+            <option value="kg">Kilograms</option>
+        </select>
+    </div>
+    <button type="submit">Create</button>
+</div>
+
+</body>
+</html>

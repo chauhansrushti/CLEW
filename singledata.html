@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color:  #159d82;;
+            color: white;
+        }
+
+        tr.hidden {
+            display: none;
+        }
+        h1{
+          text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Products with Single Date</h1>
+    <label for="dateSelect">Select Date:</label>
+    <select id="dateSelect" onchange="filterByDate()">
+        <option value="">--Select a Date--</option>
+        <option value="2023-10-01">2023-10-01</option>
+        <option value="2023-10-02">2023-10-02</option>
+    </select>
+    <div style="margin-bottom: 20px;"></div> 
+    <table>
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Date</th>
+                <th>Invoice Number</th>
+                <th>Product Name</th>
+                <th>Unit</th>
+                <th>Qty</th>
+                <th>Qty
+                    <select>
+                        <option value="CAN">CAN</option>
+                    </select>
+                </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="invoiceTableBody">
+            <tr>
+                <td>001</td>
+                <td>John Doe</td>
+                <td>2023-10-01</td>
+                <td>INV-001</td>
+                <td>Product A</td>
+                <td>pcs</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>Jane Smith</td>
+                <td>2023-10-02</td>
+                <td>INV-002</td>
+                <td>Product B</td>
+                <td>pcs</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+          
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="8">Total</td>
+                <td>0</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        function filterByDate() {
+            const selectedDate = document.getElementById("dateSelect").value;
+            const rows = document.querySelectorAll("#invoiceTableBody tr");
+
+            rows.forEach(row => {
+                const dateCell = row.cells[2].textContent; // Get the date cell
+                const isVisible = selectedDate === "" || dateCell === selectedDate;
+                row.classList.toggle("hidden", !isVisible); // Show or hide rows based on the date
+            });
+        }
+    </script>
+
+</body>
+
+</html>
